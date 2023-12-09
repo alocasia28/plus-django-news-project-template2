@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="" method="post">
+        <!-- #these are for statements -->
+        {% csrf_token %} 
+        <!-- #double curlies for inserting expressions into templates.  -->
+        {{ form.as_p }} 
+        <input type="submit" value="submit">
+
+    </form>
+
+{% endblock %}

@@ -5,5 +5,5 @@ from .models import NewsStory
 @admin.register(NewsStory)
 class NewsAdmin(admin.ModelAdmin):
     list_display = ('title','author','category','tag_line','pub_date','content','story_image_URL')
-#     # date_hierarchy = 'created' 
-#     # search_fields = ('author')
+    # date_hierarchy = 'created' 
+    # search_fields = ('author')

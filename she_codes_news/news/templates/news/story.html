@@ -2,16 +2,46 @@
 {% load static %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css'%}"
+    <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}"
 {% endblock %}
 
 {% block content %}
     <div id="story-wrapper">
         <h2>{{ story.title }}</h2>
+        <h4>{{ story.tag_line}}</h4>
         <h4>{{ story.author }}</h4>
         <div id="story-content">
-            <img src="{% static '/news/images/placeholder-5.jpg' %}">
+            <img src="{{ story.story_image_URL }}">
             {{ story.content|linebreaks }}
         </div>
     </div>
+    <div class="comment">
+        {% for comment in story.comments.all %}
+            
+                <p class="info">
+                    Comment {{ forloop.counter }} by {{ comment.name }}<br>
+                    {{ comment.message }} <br>
+                    {{ comment.created }}
+                 </p>
+                {{ comment.body|linebreaks }}
+        </div>
+        {% empty %}
+        <p>There are no comments yet.</p>
+    {% endfor %}
+
+    {% if new_comment %}
+        <h3>Your comment has been added.</h3>
+    {% else %}
+    <h3>Add a new comment</h3>
+        <!-- {% include './createComment.html' %} -->
+      
+        <form action="{% url 'news:commentForm' story.id %}" method="POST">        
+            {% csrf_token %}        
+            {{ form.as_p }}
+            <input type="submit" value="Add comment">
+        </form>
+      
+
+    {% endif %}
+
 {% endblock %}

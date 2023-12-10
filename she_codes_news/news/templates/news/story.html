@@ -15,6 +15,12 @@
             {{ story.content|linebreaks }}
         </div>
     </div>
+
+    {% if story.author == request.user.username %}
+<!-- Style the button for editing and also need to make it so that it only shows up if  -->
+        <a href="{% url 'news:update_story' story.id %}">Update Story</a>
+
+    {% endif %}
     <div class="comment">
         {% for comment in story.comments.all %}
             

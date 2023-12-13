@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}"
+{% endblock %}
+
+<h2>Search Results</h2>
+        <div id="search-results">
+            {% if latest_stories %}
+                {% for story in latest_stories %}
+                    {% include "./storyCard.html" with story=story position=forloop.counter %}
+                {% endfor %}
+            {% else %}
+                <p>No stories are available.</p>
+            {% endif %}
+        </div>

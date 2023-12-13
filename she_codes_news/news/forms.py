@@ -8,11 +8,11 @@ class StoryForm(ModelForm):
         fields = ['title','pub_date','tag_line','category','story_image_URL','content']
         widgets = {
             'pub_date': forms.DateTimeInput(
-                format='%m/%d/%Y',
+                format='%d/%m/%Y/%H:/%M',
                 attrs={
                     'class':'form-control',
                     'placeholder': 'Select a date',
-                    'type':'date'
+                    'type':'datetime-local'
                 }
             )
         }
@@ -25,3 +25,7 @@ class CommentForm(ModelForm):
     class Meta: 
         model = Comment
         fields = ['message']
+
+
+# class SearchForm(forms.Form):
+#     q = forms.CharField(label='Search',max_length=60)

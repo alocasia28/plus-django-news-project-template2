@@ -2,13 +2,15 @@
 
 # Create your views here.
 
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, FormView
 from django.views import generic
 from .models import CustomUser
 from .forms import CustomUserCreationForm
 from news.models import NewsStory
+
 
 class CreateAccountView(CreateView):
     form_class = CustomUserCreationForm
@@ -27,3 +29,30 @@ class MyProfileView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['author_stories'] = NewsStory.objects.filter(author=self.request.user)
         return context
+    
+# class SearchView(FormView):
+#     model = CustomUser
+#     template_name = 'search.html'
+#     form_class = SearchForm
+
+#     def get_queryset(self): 
+#         query = self.request.GET.get('q')
+#         object_list = NewsStory.objects.filter(
+#             Q(username__icontains='admin')
+#         )
+#         return object_list
+
+
+# class SearchView(generic.Detailview):
+#     model = CustomUser
+#     template_name = 'news/index.html'
+#     context_object_name = 'author'
+
+#     def get_object(self, *args, **kwargs):
+#         return get_object_or_404(CustomUser,username=self.kwargs['username'])
+#     # Need to change this to get input from a search bar
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['author_stories'] = NewsStory.objects.filter(author=self.request.user)
+#         return context

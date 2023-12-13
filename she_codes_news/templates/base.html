@@ -17,10 +17,12 @@
         <header>
             <div id="header-text">
                 <a id="header-link" href="{% url 'news:index' %}">
-                    <h1>She {Codes} News</h1>
+                    <img class ="logo" src = "{% static 'SheCodes.png' %}">
                 </a>
             </div>
-            {% include './nav.html' %}
+            <div id="nav">
+                {% include './nav.html' %}
+            </div>
         </header>
 
         {% block content %}{% endblock %}

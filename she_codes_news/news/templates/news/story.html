@@ -16,11 +16,20 @@
         </div>
     </div>
 
-    {% if story.author == request.user.username %}
-<!-- Style the button for editing and also need to make it so that it only shows up if  -->
-        <a href="{% url 'news:update_story' story.id %}">Update Story</a>
 
-    {% endif %}
+    <section>
+        {% if request.user.is_authenticated %}
+            {% if request.user == story.author %}
+                <a href="{% url 'news:updateStory' story.id %}">Update</a>
+             <!-- style link as a button LATER! -->
+             <a href="{% url 'news:deleteStory' story.id %}">Delete</a>
+             <!-- style link as a button LATER! -->
+            {% endif %}
+        {% endif %}
+    </section>
+
+
+
     <div class="comment">
         {% for comment in story.comments.all %}
             

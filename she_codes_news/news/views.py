@@ -1,3 +1,4 @@
+from typing import Any
 from urllib.request import Request
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views import generic
@@ -84,6 +85,28 @@ class UpdateStoryView(generic.UpdateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+    
+# def DeleteSuccessView(request):
+#     return render(request,'news.deleteSuccess,html')
+
+# class DeleteStoryView(generic.DeleteView):
+#     model = NewsStory
+#     template_name = 'news/deleteStory.html'
+#     success_url = reverse_lazy('news:index')
+#     context_object_name = 'deletestory'
+
+#     def get_context_data(self, **kwargs: Any):
+#         context = super().get_context_data(**kwargs)
+#         context['story'] = NewsStory.objects.get(id=self.kwargs['pk'])
+#         return context
+class DeleteStoryView(generic.DeleteView):
+    model = NewsStory
+    template_name = "news/deleteStory.html"
+    fields = ['title','category', 'story_image_URL', 'pub_date', 'content']
+    success_url = reverse_lazy('news:index')
+    
+    def delete(self, request, *args, **kwargs):
+        return super().delete(request, *args, **kwargs)
     
 class CommentView(generic.CreateView):
     form_class = CommentForm

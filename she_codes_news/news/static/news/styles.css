@@ -1,6 +1,6 @@
 .story-card {
     margin: 2px;
-    border: 1px solid #000;
+    border: 1px solid #474747;
     padding: 5px;
 }
 
@@ -83,4 +83,9 @@
     float: right;
     margin: 0 0 10px 10px;
     width: 50%;
+}
+
+h4.category {
+    color: red;
+    text-transform: uppercase;
 }

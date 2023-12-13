@@ -2,13 +2,20 @@
 
 {% block content %}
 
+{% if request.user.is_authenticated %}
+<section class = "form-container">
     <form action="" method="post">
         <!-- #these are for statements -->
+        <div class ="form">
         {% csrf_token %} 
         <!-- #double curlies for inserting expressions into templates.  -->
         {{ form.as_p }} 
-        <input type="submit" value="submit">
+        </div>
+        <input type="submit" class = "submit_button" value="submit">
 
     </form>
-
+{% else %} 
+    <h2>Oops! You are not logged in. </h2>
+    <h2>Login or create an account to submit your story. </h2>
+{% endif %}
 {% endblock %}

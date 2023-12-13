@@ -52,3 +52,47 @@ a {
 a, p {
     font-family: monospace;
 }
+
+/* create story form */
+form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 80%; */
+    /* align-self: center; */
+}
+label {
+    color: #9a460e;
+    text-align: left;
+}
+
+div.form {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: 16px;
+    height: auto;
+    width: 500px;
+}
+
+.form-control {
+    width: 100%;
+    height: 30px;
+    background-color: #ac86a0;
+    color: white;
+    border: none;
+    
+}
+
+textarea.form-control {
+    height: 500px;
+    border: none;
+}
+
+input.submit_button {
+    background-color: rgb(226, 200, 87);
+    width: 100px;
+    height: 30px;
+    border:  none;
+}

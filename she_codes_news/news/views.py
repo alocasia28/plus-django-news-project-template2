@@ -79,12 +79,13 @@ class AddStoryView(generic.CreateView):
 class UpdateStoryView(generic.UpdateView):
     model=NewsStory
     template_name = "news/updateStory.html"
-    fields = ['title','category', 'story_image_URL', 'pub_date', 'content']
     success_url = reverse_lazy('news:index')
 
+
     def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+        if form.instance.author == self.request.user:
+            return super().form_valid(form)
+        
     
 # def DeleteSuccessView(request):
 #     return render(request,'news.deleteSuccess,html')
@@ -101,12 +102,12 @@ class UpdateStoryView(generic.UpdateView):
 #         return context
 class DeleteStoryView(generic.DeleteView):
     model = NewsStory
-    template_name = "news/deleteStory.html"
-    fields = ['title','category', 'story_image_URL', 'pub_date', 'content']
+    # template_name = "news/deleteStory.html"
+    # fields = ['title','category', 'story_image_URL', 'pub_date', 'content']
     success_url = reverse_lazy('news:index')
     
-    def delete(self, request, *args, **kwargs):
-        return super().delete(request, *args, **kwargs)
+    # def delete(self, request, *args, **kwargs):
+    #     return super().delete(request, *args, **kwargs)
     
 class CommentView(generic.CreateView):
     form_class = CommentForm

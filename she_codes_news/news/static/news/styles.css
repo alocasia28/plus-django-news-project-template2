@@ -1,7 +1,12 @@
 .story-card {
     margin: 2px;
     border: 1px solid #b77621;
+    border-radius: 5px;
+    /* border-color: ; */
     padding: 5px;
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(202, 100, 93, 0.522);
+    /* box-shadow: 1px 2px rgb(202, 232, 7); */
 }
 
 .story-card img {
@@ -55,6 +60,7 @@
 #story-card-3 .story-card-text h4,
 #story-card-4 .story-card-text h4 {
     font-size: 12px;
+    margin-top: 5px;
 }
 
 #story-card-2 img,
@@ -87,9 +93,10 @@
 }
 
 h4.category {
-    color: red;
+    color: rgb(200, 31, 31);
     text-transform: uppercase;
     margin: 0;
+    /* box-shadow: #b77621; */
 }
 
 /* Update/Delete buttons */
@@ -99,4 +106,34 @@ input.submit_button {
     width: 100px;
     height: 30px;
     border:  none;
+}
+
+/* story.html formatting to make the comments and everything else nice */
+#story-page {
+    display: flex;
+    flex-direction: column;
+}
+
+div.info {
+    /* border: 1px red solid; */
+    width: 50%;
+    background-color: rgb(145, 156, 189);
+    border-radius: 5px;
+    /* padding-left: 10px; */
+    /* padding-bottom: 1px; */
+    /* margin: 5px; */
+    
+}
+p.comment-info { 
+    font-style: italic;
+    font-weight: 600;
+    text-transform: uppercase;
+    /* background-color: white; */
+}
+p.comment-message { 
+    font-weight: 500;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border: rgb(145, 156, 189) 3px solid;
 }

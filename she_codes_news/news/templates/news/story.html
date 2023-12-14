@@ -32,22 +32,24 @@
             {% endif %}
         {% endif %}
     </section>
-
+    <br>
 
 
     <div class="comment">
         {% for comment in story.comments.all %}
             
-                <p class="info">
-                    Comment {{ forloop.counter }} by {{ comment.name }}<br>
-                    {{ comment.message }} <br>
-                    {{ comment.created }}
-                 </p>
+                
+                <div class="info">
+                    <p class="comment-info">Comment {{ forloop.counter }} by {{ comment.name }} | {{ comment.created }}</p>
+                    <p class="comment-message"> {{ comment.message }} </p>
+                </div>
                 {{ comment.body|linebreaks }}
-        </div>
+        
         {% empty %}
         <p>There are no comments yet.</p>
-    {% endfor %}
+    
+        {% endfor %}
+    </div>
 
     {% if new_comment %}
         <h3>Your comment has been added.</h3>

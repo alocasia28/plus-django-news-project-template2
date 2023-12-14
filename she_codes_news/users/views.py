@@ -17,6 +17,8 @@ class CreateAccountView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'users/createAccount.html'
 
+
+
 class MyProfileView(TemplateView):
     model = CustomUser
     success_url = reverse_lazy('myProfile')
@@ -29,6 +31,7 @@ class MyProfileView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['author_stories'] = NewsStory.objects.filter(author=self.request.user)
         return context
+    #slight issue with this one. If a user is not logged in and you try to access /users/my-profile/ you get a TypeError since it needed an id to match it to the user
     
 # class SearchView(FormView):
 #     model = CustomUser

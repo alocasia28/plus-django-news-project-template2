@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+<div id = "story-page">
     <div id="story-wrapper">
         <h2>{{ story.title }}</h2>
         <h4>{{ story.tag_line}}</h4>
@@ -20,9 +21,13 @@
     <section>
         {% if request.user.is_authenticated %}
             {% if request.user == story.author %}
-                <a href="{% url 'news:updateStory' story.id %}">Update</a>
+            <a href="{% url 'news:updateStory' story.id %}">  
+                <input  type="submit" class="submit_button" value="Update">
+            </a>
              <!-- style link as a button LATER! -->
-             <a href="{% url 'news:deleteStory' story.id %}">Delete</a>
+             <a href="{% url 'news:deleteStory' story.id %}">
+                <input  type="submit" class="submit_button" value="Delete">
+             </a>
              <!-- style link as a button LATER! -->
             {% endif %}
         {% endif %}
@@ -55,7 +60,7 @@
             {{ form.as_p }}
             <input type="submit" value="Add comment">
         </form>
-      
+</div>
 
     {% endif %}
 

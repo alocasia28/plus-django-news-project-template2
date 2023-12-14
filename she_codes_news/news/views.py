@@ -79,6 +79,7 @@ class AddStoryView(generic.CreateView):
 class UpdateStoryView(generic.UpdateView):
     model=NewsStory
     template_name = "news/updateStory.html"
+    fields = ['title','category', 'story_image_URL', 'pub_date', 'content']
     success_url = reverse_lazy('news:index')
 
 

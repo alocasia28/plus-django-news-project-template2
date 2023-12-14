@@ -91,3 +91,12 @@ h4.category {
     text-transform: uppercase;
     margin: 0;
 }
+
+/* Update/Delete buttons */
+
+input.submit_button {
+    background-color: rgb(226, 200, 87);
+    width: 100px;
+    height: 30px;
+    border:  none;
+}

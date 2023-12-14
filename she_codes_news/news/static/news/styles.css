@@ -1,11 +1,11 @@
 .story-card {
     margin: 2px;
-    border: 1px solid #b77621;
-    border-radius: 5px;
+    border: 1px solid #ffffff;
+    /* border-radius: 5px; */
     /* border-color: ; */
     padding: 5px;
-    background-color: rgb(255, 255, 255);
-    background-color: rgba(202, 100, 93, 0.522);
+    /* background-color: rgb(255, 255, 255); */
+    background-color: rgba(205, 124, 118, 0.407);
     /* box-shadow: 1px 2px rgb(202, 232, 7); */
 }
 
@@ -19,7 +19,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 1px 1px;
+    gap: 5px 5px;
     grid-template-areas: "left-1 right-1" "left-1 right-2" "left-1 right-3";
     max-height: 500px;
 }
@@ -75,6 +75,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    /* gap: 5px; */
 }
 
 #all-stories .story-card {

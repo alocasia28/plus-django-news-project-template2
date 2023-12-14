@@ -8,7 +8,7 @@ html {
 }
 body {
     /* background-color: rgb(255, 255, 255); */
-    max-width: 1200px;
+    width: 1200px;
 }
 
 header {

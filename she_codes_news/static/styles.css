@@ -53,7 +53,7 @@ a, p {
     font-family: monospace;
 }
 
-/* create story form */
+/* create story form and some parts of create account form*/
 form {
     text-align: center;
     display: flex;
@@ -74,10 +74,12 @@ div.form {
     font-size: 16px;
     height: auto;
     width: 500px;
+    align-items: center;
+    /* border: 1px red solid; */
 }
 
 .form-control {
-    width: 100%;
+    width: 500px;
     height: 30px;
     background-color: #ac86a0;
     color: white;
@@ -95,4 +97,20 @@ input.submit_button {
     width: 100px;
     height: 30px;
     border:  none;
+}
+
+section.form-container {
+    text-align: center;
+    /* border: 1px blue solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul, span.helptext {
+    color: rgb(0, 90, 128);
+    font-family:'Courier New', Courier, monospace;
+    text-decoration: none;
+    font-size: small;
+    text-align: left;
 }

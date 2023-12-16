@@ -10,18 +10,49 @@ body {
     /* background-color: rgb(255, 255, 255); */
     width: 1200px;
 }
-
+/* header styling */
 header {
     display: flex;
+    
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #000;
+
 }
 
 img.logo {
     height: 200px;
 }
 
+#header-text {
+    width: 20%;
+    display: flex;
+}
+
+#nav {
+    width:60%;
+}
+
+#search-form { 
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+}
+nav {
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: end;
+}
+
+div.nav-options {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    /* align-items: end; */
+}
+
+/* Overall h styling */
 h1 {
     font-family: 'Montserrat Subrayada', sans-serif;
     text-decoration: none;
@@ -30,7 +61,10 @@ h1 {
 }
 
 h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-size: 1.5rem;
 }
 
 h3 {
@@ -38,17 +72,7 @@ h3 {
     margin: 0;
 }
 
-#header-text {
-    flex-basis: 80%;
-    display: flex;
-}
 
-nav {
-    flex-basis: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
 
 a {
     margin: 2px;
@@ -65,6 +89,8 @@ form {
     text-align: center;
     display: flex;
     flex-direction: column;
+    text-transform: uppercase;
+    /* width: 500px; */
     align-items: center;
     /* width: 80%; */
     /* align-self: center; */
@@ -129,7 +155,7 @@ ul, span.helptext {
 section.profile_container {
     display: flex;
     flex-direction: row;
-    border:1px red solid;
+    /* border:1px red solid; */
     /* display: grid;
     grid-template-columns: fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -140,20 +166,31 @@ section.profile_container {
 .profile_information {
     width: 33%;
     text-align: center;
+    height: 500px;
+    /* border: 4px solid green; */
+    margin: 10px;
     
 }
-
+div.story-card {
+    /* border: 2px rgb(117, 121, 117) dashed; */
+    background-color: rgba(103, 162, 94, 0.685);
+    /* display: flex; */
+    /* justify-content: center; */
+    margin: 10px;
+}
 #story-card-1 { 
     grid-area: left-1;
 }
 
 #user-stories {
-    border: 2px pink solid;
+    /* border: 2px pink solid; */
     width: 66%;
+    margin: 10px;
 }
 
 #user-stories img {
     object-fit: contain;
     width: 400px;
     height: 100%;
+
 }
